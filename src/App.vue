@@ -16,6 +16,36 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+}
+body{
+  padding: 0;
+  margin: 0
+}
+.logo {
+    width: 100px
+}
+.register input, .login input
+{
+    text-align: center;
+    width: 300px;
+    height: 40px;
+    display: block;
+    margin-bottom: 30px;
+    margin-left: auto;
+    margin-right: auto;
+    border: 1px solid skyblue;
+}
+
+.register button, .login button{
+    text-align: center;
+    width: 308px;
+    height: 40px;
+    display: block;
+    margin-bottom: 30px;
+    margin-left: auto;
+    margin-right: auto;
+    border: 1px solid skyblue;
+    background-color: skyblue;
+    color: white;
 }
 </style>
