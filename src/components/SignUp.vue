@@ -12,6 +12,8 @@
 </template>
 
 <script>
+import axios from 'axios';
+
 export default {
     name: 'SignUp',
     data(){
@@ -22,9 +24,26 @@ export default {
         }
     },
     methods:{
-        signUP(){
+        async signUP(){
             console.warn("signUP", this.name, " +++" , this.email);
-        }
+            let result = await axios.post("http://localhost:3000/users",{
+                email:this.email,
+                name: this.name,
+                password: this.password
+            });
+            console.warn(result);
+            if(result.status==201)
+            {
+            localStorage.setItem("user-info",JSON.stringify(result.data));
+            this.$router.push({name:'Home'})
+        }}
+
+    },
+    mounted(){
+       let user = localStorage.getItem('user-info');
+       if(user){
+            this.$router.push({name:'Home'})
+       }
     }
 }
 </script>
